@@ -1,0 +1,27 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url('https://repo.jenkins-ci.org/public/')
+        }
+    }
+}
+
+plugins {
+    id 'org.jenkins-ci.jpi' version '0.22.0'
+}
+
+group = 'org.jenkins-ci.plugins'
+description = 'Jenkins hello world groovy plugin'
+version = '0.0.1'
+
+jenkinsPlugin {
+  coreVersion = jenkinsVersion
+  displayName = 'Hello world'
+  url = 'https://github.com/ageekymonk/hello-world-groovy-plugin'
+}
+
+dependencies {
+  compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
+  compile "org.jenkins-ci.plugins:plugin:2.2"
+}
